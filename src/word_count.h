@@ -4,7 +4,7 @@
 #include <string>
 
 /**
- * Counts number of words, separated by spaces, in a line.
+ * Counts number of words, separated by spaces, in a line starting at a particular index.
  * @param line string in which to count words
  * @param start_idx starting index to search for words
  * @return number of words in the line
