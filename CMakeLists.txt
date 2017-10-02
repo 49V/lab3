@@ -19,6 +19,7 @@ target_link_libraries(shakespeare Threads::Threads)
 
 # copy data files
 FILE(COPY data DESTINATION "${CMAKE_BINARY_DIR}")
+FILE(COPY data DESTINATION "${CMAKE_BINARY_DIR}/${CONFIGURATION}")
 
 # add library directory
 include_directories(../library/include)
@@ -47,5 +48,5 @@ endif()
 # set working directories
 if (${CMAKE_VERSION} VERSION_GREATER "3.8.0" OR ${CMAKE_VERSION} VERSION_EQUAL "3.8.0")
     set_target_properties(system_logger_parent PROPERTIES
-            VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/$(Configuration)")
+            VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/$(CONFIGURATION)")
 endif()
